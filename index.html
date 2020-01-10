@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=0, height=device-height, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' gap://ready file://* *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta name="description" content="Unifyed Mobile App">
+    <meta name="author" content="Unifyed Mobile">
+    <base href="" />
+    <title>Unifyed Mobile</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="dist/static/plugincss.min.css"/>
+    <link rel="stylesheet" href="dist/static/mobilecss.min.css"/>
+    <style id="themeColorsCSS"></style>
+    <script id="homeScreenTemplate"></script>
+  </head>
+  <body ng-cloak ng-app="unifyedmobile" class="app">
+    <!-- app header -->
+    <div id="appHeader" class="app-header headerFooterBg" class="highlightedBackgroundColor" ng-if="appletTitle">
+        <div class="leftSection">
+        <span id="backApplet" ng-hide="showlogin" data-name="Back" ng-click="$root.goPreviousPage();">
+            <leftarrow-icon class="icon18"></leftarrow-icon>
+        </span>
+        <span class="appLogo">
+          <img ng-src="{{$root.tenantDetails.smallLogoUrl}}" alt="Tenant logo" />
+        </span>
+        </div>
+        <span id="appTitle">{{$root.appletTitle}}</span>
+        <span id="userProfile">
+          <span ng-if="!$root.loggedIn && $root.appDetails.erp" ng-click='loginlogout();'>
+            <!--<img class="convertsvg headerIcon" id="unifyedloginIcon" src="images/login.svg" alt="">-->
+            <svg class="headerIcon" id="unifyedloginIcon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+            <g>
+            	<g>
+            		<g>
+            			<path d="M131.5,472H60.693c-8.538,0-13.689-4.765-15.999-7.606c-3.988-4.906-5.533-11.29-4.236-17.519
+            				c20.769-99.761,108.809-172.616,210.445-174.98c1.693,0.063,3.39,0.105,5.097,0.105c1.722,0,3.434-0.043,5.142-0.107
+            				c24.853,0.567,49.129,5.24,72.236,13.917c10.34,3.885,21.871-1.352,25.754-11.693c3.883-10.34-1.352-21.871-11.693-25.754
+            				c-3.311-1.244-6.645-2.408-9.995-3.512C370.545,220.021,392,180.469,392,136C392,61.01,330.991,0,256,0
+            				c-74.991,0-136,61.01-136,136c0,44.509,21.492,84.092,54.643,108.918c-30.371,9.998-58.871,25.546-83.813,46.062
+            				c-45.732,37.617-77.529,90.086-89.532,147.743c-3.762,18.066,0.744,36.622,12.363,50.908C25.221,503.847,42.364,512,60.693,512
+            				H131.5c11.046,0,20-8.954,20-20C151.5,480.954,142.546,472,131.5,472z M160,136c0-52.935,43.065-96,96-96s96,43.065,96,96
+            				c0,51.367-40.554,93.438-91.326,95.885c-1.557-0.028-3.114-0.052-4.674-0.052c-1.564,0-3.127,0.023-4.689,0.051
+            				C200.546,229.43,160,187.362,160,136z"/>
+            			<path d="M496.689,344.607c-8.561-19.15-27.845-31.558-49.176-31.607h-62.372c-0.045,0-0.087,0-0.133,0
+            				c-22.5,0-42.13,13.26-50.029,33.807c-1.051,2.734-2.336,6.178-3.677,10.193H200.356c-5.407,0-10.583,2.189-14.35,6.068
+            				l-34.356,35.388c-7.567,7.794-7.529,20.203,0.085,27.95l35,35.612c3.76,3.826,8.9,5.981,14.264,5.981h65c11.046,0,20-8.954,20-20
+            				c0-11.046-8.954-20-20-20h-56.614l-15.428-15.698L208.814,397h137.491c9.214,0,17.235-6.295,19.426-15.244
+            				c1.618-6.607,3.648-12.959,6.584-20.596c1.936-5.036,6.798-8.16,12.741-8.16c0.013,0,0.026,0,0.039,0h62.371
+            				c5.656,0.013,10.524,3.053,12.705,7.932c5.369,12.012,11.78,30.608,11.828,50.986c0.048,20.529-6.356,39.551-11.739,51.894
+            				c-2.17,4.978-7.079,8.188-12.56,8.188c-0.011,0-0.022,0-0.033,0h-63.125c-5.533-0.013-10.716-3.573-12.896-8.858
+            				c-2.339-5.671-4.366-12.146-6.197-19.797c-2.571-10.742-13.367-17.366-24.105-14.796c-10.743,2.571-17.367,13.364-14.796,24.106
+            				c2.321,9.699,4.978,18.118,8.121,25.738c8.399,20.364,27.939,33.555,49.827,33.606h63.125c0.043,0,0.083,0,0.126,0
+            				c21.351-0.001,40.647-12.63,49.18-32.201c6.912-15.851,15.137-40.511,15.072-67.975
+            				C511.935,384.434,503.638,360.153,496.689,344.607z"/>
+            			<circle cx="431" cy="412" r="20"/>
+            		</g>
+            	</g>
+            </g>
+            </svg>
+          </span>
+          <div class="userProfileImage" ng-if="$root.loggedIn">
+            <a ng-href="#/app/Profile306/Profile306">
+              <span class="userInitial" ng-if="!$root.user.profileImage" ng-style="{ background: randomBackground($root.user.firstName[0],$root.user.lastName[0]) }">
+                {{$root.user.firstName[0]}}{{$root.user.lastName[0]}}
+              </span>
+              <img  ng-if="$root.user.profileImage" ng-src="{{$root.user.profileImage}}" alt="Tenant logo" />
+            </a>
+          </div>
+        </span>
+    </div>
+
+
+
+    <div class="appContainer">
+        <!-- views -->
+        <div id="loadApplet">
+            <div class="viewContainer" ng-view ></div>
+        </div>
+    </div>
+
+    <div id="bottomFixContent" >
+      <!--append footer Item from applet-->
+      <div id="fixedFooterContent"></div>
+      <!--dockIcon-->
+      <div id='dockIcon' ng-show="$root.dockApplets" class="dockIconBlock" ng-hide="$root.hideDockMenu == true">
+        <ul>
+          <div class="dockIconLeft">
+          <li ng-repeat='app in $root.dockApplets | limitTo : 2'>
+            <a class="dockIconLink dockIcon{{app.id}}" ng-href='#{{app.url}}'>
+              <span class="dockIconImage" ng-class="!app.url?'lightBgColor borderRadius4px':''">
+                <img class="dock-menu-icon" ng-src="{{app.image}}" />
+                <span class="badge dockBadgeIcon"  ng-if="app.url == '/app/Notification290/Notification290' && notificationcentre && notificationcentre.badge" id="notificationBubble">
+                  {{(notificationcentre && notificationcentre.badge && notificationcentre.badge <= 9 && notificationcentre.badge) || notificationcentre && notificationcentre.badge && notificationcentre.badge > 9 && 9 }}<add-icon class="notificationcentreAdd" ng-if="notificationcentre.badge > 9"></add-icon>
+              </span>
+              </span>
+              <span class="dockIconLabel">{{app.label}}</span>
+            </a>
+          </li>
+          </div>
+          <li class="centerMenu">
+            <svg class="curveIcon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 262 63.42"><path d="M262,63.42H0c.39-.28.75-.71,1.18-.81C24.62,57.2,45.46,46.52,64.33,31.75,82.05,17.89,99.63,2.29,123,.42a87,87,0,0,1,17,0c2.29.26,4.48,1.09,6.74,1.56,20,4.18,36.65,14.71,51.85,27.63a145,145,0,0,0,36.75,22.73C244.17,56.16,253.11,59.73,262,63.42Z"/></svg>
+            <a class="dockIconLink menuRbac" ng-href='#/app/Menu/Menu'>
+              <span class="dockIconImage borderRadius4px">
+                <grid-icon class="dock-menu-icon icon18"></grid-icon>
+              </span>
+              <span class="dockIconLabel">Menu</span>
+            </a>
+          </li>
+          <div class="dockIconRight">
+          <li ng-if="$index == 2 || $index == 3" ng-repeat='app in $root.dockApplets'>
+            <a class="dockIconLink dockIcon{{app.id}}" ng-href='#{{app.url}}'>
+              <span class="dockIconImage" ng-class="!app.url?'lightBgColor borderRadius4px':''">
+                <img class="dock-menu-icon" ng-src="{{app.image}}" />
+                 <span class="badge dockBadgeIcon" ng-if="app.url == '/app/Notification290/Notification290' && notificationcentre && notificationcentre.badge" id="notificationBubble">
+                  {{(notificationcentre && notificationcentre.badge && notificationcentre.badge <= 9 && notificationcentre.badge) || notificationcentre && notificationcentre.badge && notificationcentre.badge > 9 && 9 }}<add-icon class="notificationcentreAdd" ng-if="notificationcentre.badge > 9"></add-icon>
+              </span>
+              </span>
+              <span class="dockIconLabel">{{app.label}}</span>
+            </a>
+          </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <!-- Modal -->
+        <div id="modale" class="modale" style="display: none;position: absolute; z-index: 1000;height: calc(100vh);" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-body proximaFont" style="padding:0px;position: relative;">
+                    <img id="notImg" style="width:100%;border-top-left-radius: 3px;border-top-right-radius: 3px;max-height: 230px;" />
+                    <div id="notTitle" style="font-size: 18px;padding-top: 14px;"></div>
+                    <div id="notDesc" style="padding-bottom: 14px;"></div>
+                    <div style="position: absolute;top: 4px;right: 4px;background: #fff;border-radius: 50%;width: 30px; height: 30px; line-height: 30px; text-align: center;" onclick="removeModal();"><img src="images/cross.png" style="width: 15px;" /></div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade in" id="acknowledgeModal" role="dialog" data-backdrop="static" data-keyboard="false">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">{{$root.unAcknowledgeMessages[0].title}}</h4>
+              </div>
+              <div class="modal-body" id="acknowledgeModalBody">
+                <p>{{$root.unAcknowledgeMessages[0].message}}</p>
+              </div>
+              <div class="modal-footer text-center">
+                <button class="btn btn-primary" ng-if="!$root.unAcknowledgeMessages[0].important" ng-click="$root.ackMessage($root.unAcknowledgeMessages[0]._id, 'skip');">Skip</button>
+                <button class="btn btn-primary" ng-click="$root.ackMessage($root.unAcknowledgeMessages[0]._id,'ack');">Acknowledge</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Modal -->
+    <!-- scripts -->
+    <script type="text/javascript" charset="utf-8" src="mobileConfig.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="dist/static/pluginjs.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="dist/static/mobilejs.min.js"></script>
+    <script>
+      function removeModal(){
+        $('.modale').removeClass('opened');
+        $('.modale').hide();
+      }
+      $.blockUI.defaults.css.border = 'none';
+      $.blockUI.defaults.css.background = 'none';
+      $.blockUI.defaults.overlayCSS.opacity = 0.5;
+      $.blockUI.defaults.message = '<div id="floatingBarsG"><div class="blockG" id="rotateG_01"></div><div class="blockG" id="rotateG_02"></div><div class="blockG" id="rotateG_03"></div><div class="blockG" id="rotateG_04"></div><div class="blockG" id="rotateG_05"></div><div class="blockG" id="rotateG_06"></div><div class="blockG" id="rotateG_07"></div><div class="blockG" id="rotateG_08"></div></div><div></div>';
+    </script>
+  </body>
+</html>

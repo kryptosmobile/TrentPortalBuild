@@ -1,0 +1,75 @@
+<style>
+     #loadApplet{
+        padding-bottom: 0px !important;
+    }
+    .scrollableBox{
+        height: 100% !important;
+    }
+    .list-group-item.toolbar-menu.group-menu {
+        padding: 0px;
+        justify-content: left;
+    }
+    .list-group-item.toolbar-menu.group-menu .toobar-inner {
+        width: auto;
+        overflow-x: scroll;
+        justify-content: left;
+    }
+    .toolbar-column-selected {
+        border-bottom: 2px solid #000 !important;
+    }    
+    .swiperMain .swiper-container {
+        width: 100%;
+    }
+    .swiperMain .swiper-container .swiper-slide,
+    .swiperMain .groupNavSwipe .swiper-slide{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .swiperMain .groupNavSwipe .swiper-slide{
+        flex: 1 0 33%;
+        max-width: 50%;
+    }
+    .swiperMain .swiper-container .swiper-slide{
+        flex: 1 0 31%;
+        max-width: 50%;
+    }
+    .list-group-item.group-menu.swiperMain{
+        padding: 0px;
+        margin-top:10px;
+        background: #f9f9f9;
+    }
+    .toolbar-column .toolbar-column-active span:after {
+        content: '';
+        width: 100%;
+        height: 4px;
+        border-radius: 4px 4px 0 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #111;
+    }
+    .toolbar-column .toolbar-column-active span.tabs-ellipsis{
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+<div class="scrollableBox">
+    <div class="list-group-item swiperMain group-menu clearfix" ng-show="$root.rbacGroupMenuGenerated">
+        <div  ng-class="$root.rbacnavmenu.length > 3?'swiper-container':'groupNavSwipe'">
+            <div class="toobar-inner swiper-wrapper">
+                <a ng-repeat="rbac in $root.rbacnavmenu" id="tab{{$index}}" aria-label="{{rbac.label}}"  
+                class="group-tab-item cursorPointer toolbar-column borderNone swiper-slide" 
+                ng-class="($root.currentPagePath == rbac.url) ? 'toolbar-column-active' : ''"
+                ng-href="/#{{rbac.url}}">
+                    <span class="proximaFont tabs-ellipsis">{{rbac.label}}</span> 
+                </a>
+            </div>
+        </div>
+    </div> 
+    <div id="pageContent" ng-controller='unifyedPageCtrl as ctrl'>
+        <sitegrouppageheader></sitegrouppageheader>
+    </div>
+</div>
+<!--append Modal from applet-->
+<div id='appletModal'></div>

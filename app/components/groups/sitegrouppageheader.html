@@ -1,0 +1,1252 @@
+<style>
+    #loadApplet{
+        padding-bottom: 0px !important;
+    }
+    .scrollableBox{
+        height: 100% !important;
+    }
+    .groups-applet .sm_webAppletContentPadding {
+        padding-top: 0px !important;
+    }
+    
+    .groups-applet .groupBanner {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 4px;
+        border: 1px solid #e7e7e7;
+        background: #c2c2c2;
+        text-align: center;
+    }
+    
+    .groups-applet .groupBanner img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+    }
+    
+    .groups-applet .groupDetail h2 {
+        font-weight: bold;
+        color: #252729;
+        font-size: 18px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .groups-applet .groupDetail ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 15px;
+    }
+    
+    .groups-applet .groupDetail .mamberLabel li {
+        display: inline-block;
+        margin-right: 10px;
+        color: #767676;
+    }
+    
+    .groups-applet .groupDetail .mamberLabel li:last-child {
+        margin-right: 0px;
+    }
+    
+    .groups-applet .groupDetail .mamberLabel li svg {
+        width: 12px;
+        height: 12px;
+        margin-right: 5px;
+    }
+    
+    .groups-applet .groupDetail .mamberLabel li svg path {
+        color: #767676;
+    }
+    
+    .groups-applet .groupDetail p {
+        font-size: 14px;
+        font-family: 'proximaSemiBold';
+        margin-bottom: 15px;
+        color: #767676;
+    }
+    /*invite selections */
+    
+    .groups-applet .titlesectionGap {
+        padding-top: 15px;
+        border-top: 1px solid #e7e7e7;
+    }
+    
+    .groups-applet .sectionContainer {
+        display: flex;
+        border: 1px solid #e7e7e7;
+        border-radius: 0 0 4px 4px;
+        align-content: center;
+        justify-content: center;
+        padding-bottom: 15px;
+        padding-top: 0px;
+    }
+    
+    .groups-applet .sectionGap {
+        flex: 0 1 58.33333333%;
+        padding: 15px;
+        padding-top: 0px;
+    }
+    
+    .groups-applet .formGroup>label {
+        font-size: 14px;
+        color: #767676;
+        font-weight: normal;
+        margin-bottom: 8px;
+    }
+    
+    .groups-applet .formGroup>textarea {
+        resize: none;
+    }
+    
+    .groups-applet .aboutGroupMain,
+    .groups-applet .inviteMemberMain,
+    .groups-applet .addedMember {
+        display: flex;
+        align-content: center;
+    }
+    
+    .groups-applet .addedMemberBox {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .groups-applet .mamberIcon,
+    .groups-applet .mamberAction {
+        flex: 1;
+    }
+    
+    .groups-applet .mamberAction svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .groups-applet .mamberIcon svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .groups-applet .mamberIcon {
+        flex: 0 1 40px;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background: #c2c2c2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 18px;
+        font-family: proximaSemiBold;
+        overflow: hidden;
+        margin-right: 10px;
+        padding: 7px;
+    }
+    
+    .groups-applet .mamberIcon svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .groups-applet .mamberIcon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .groups-applet .u8PopupBg {
+        position: fixed;
+        z-index: 99999;
+        top: 0px;
+        background: rgba(0, 0, 0, .5);
+    }
+    
+    .groups-applet .marginL0px {
+        margin-left: 0px;
+    }
+    
+    .groups-applet .u8PopupBg .modal-body {
+        overflow-y: auto;
+        max-height: 72vh;
+        min-height: 300px;
+    }
+    
+    .groups-applet .userList li {
+        height: 20px;
+    }
+    
+    .groups-applet .memberList {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+    
+    .groups-applet .memberList:last-child {
+        margin-bottom: none;
+    }
+    
+    .groups-applet .memberList .memberIamge {
+        flex: 0 1 40px;
+        min-width: 40px;
+        margin-right: 10px;
+    }
+    
+    .groups-applet .memberList .memberAction {
+        flex: 0 1 50px;
+        min-width: 50px;
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .groups-applet .memberList .memberDetails {
+        flex: 1;
+    }
+    
+    .groups-applet .memberList .memberAction svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .groups-applet .memberList .memberAction span {
+        margin-left: 5px;
+        display: inline-block;
+    }
+    
+    .groups-applet .memberList .memberIamge img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .groups-applet .memberList .userInitial {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        color: #ffffff;
+    }
+    
+    .groups-applet .input-group-btn img {
+        height: 20px;
+    }
+    
+    .groups-applet .Itemsearch {
+        border: 1px solid #e7e7e7;
+        border-radius: 4px;
+    }
+    
+    .groups-applet .Itemsearch .borderNone {
+        background: transparent;
+        height: auto;
+    }
+    
+    .groups-applet .Itemsearch .borderNone img {
+        height: 18px;
+    }
+    
+    .groups-applet .groupDropdown,
+    .groups-applet .inviteSearchFilter {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    
+    .groups-applet .directionColum {
+        flex-direction: column;
+    }
+    
+    .groups-applet .formGroup {
+        margin-bottom: 10px;
+    }
+    
+    .groups-applet .mamberIcon>svg path {
+        fill: #ffffff;
+        width: 14px;
+        height: 14px;
+    }
+    
+    .groups-applet .userList li {
+        height: 20px;
+    }
+    
+    .groups-applet .memberList {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+    
+    .groups-applet .memberList:last-child {
+        margin-bottom: none;
+    }
+    
+    .groups-applet .memberList .memberIamge {
+        flex: 0 1 40px;
+        min-width: 40px;
+        margin-right: 10px;
+    }
+    
+    .groups-applet .memberList .memberAction {
+        flex: 0 1 50px;
+        min-width: 50px;
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .groups-applet .memberList .memberDetails {
+        flex: 1;
+    }
+    
+    .groups-applet .memberList .memberDetails {
+        font-size: 16px;
+    }
+    
+    .groups-applet .memberList .memberAction svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .groups-applet .memberList .memberAction span {
+        margin-left: 5px;
+        display: inline-block;
+    }
+    
+    .groups-applet .memberList .memberIamge img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .groups-applet .memberList .userInitial {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        color: #ffffff;
+    }
+    
+    .groups-applet .Itemsearch .borderNone img {
+        height: 18px;
+    }
+    
+    .groups-applet .groupDropdown,
+    .groups-applet .inviteSearchFilter {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    
+    .groups-applet .inviteSearchFilter label {
+        font-size: 12px;
+        font-weight: normal;
+        color: #767676!important;
+    }
+    
+    .groups-applet .inviteSearchFilter .searchTitle {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .groups-applet .userList {
+        padding-left: 0px;
+        list-style: none;
+    }
+    
+    .groups-applet .inviteSearchFilter {
+        border-radius: 4px;
+    }
+    
+    .groups-applet .inviteSearchFilter ul.userList li span {
+        cursor: pointer;
+    }
+    
+    .groups-applet .inviteSearchFilter ul.userList li span img {
+        margin-top: -3px;
+        height: 12px;
+        width: 12px;
+    }
+    
+    .groups-applet .groupSmallScreenDropdown {
+        max-height: 165px;
+        overflow-y: scroll;
+        top: 80px;
+    }
+    /*invite users ends*/
+    
+    .groups-applet .groupEditIcon svg {
+        width: 18px;
+        height: 18px;
+        fill: #767676;
+        vertical-align: middle;
+    }
+    
+    .groups-applet .groupEditIcon>span {
+        padding: 4px;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+    
+    .groups-applet .groupDetail ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0px;
+        right: 0;
+        left: auto;
+        top: 26px;
+    }
+    
+    .groups-applet .groupDetail ul.mamberLabel {
+        display: inline-block;
+        font-size: 14px;
+        color: #767676;
+        margin-right: 10px;
+    }
+    
+    .groups-applet .groupDetail .allmember {
+        padding-left: 0;
+        list-style: none;
+    }
+    
+    .groups-applet .groupDetail .allmember li {
+        border: 1px solid #fff;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        background: #c2c2c2;
+        margin-left: -10px;
+        float: left;
+        overflow: hidden;
+    }
+    
+    .groups-applet .groupDetail .allmember li:first-child {
+        margin-left: 0px;
+    }
+    
+    .groups-applet .groupDetail .allmember li img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .groups-applet .groupContect {
+        position: relative;
+    }
+    
+    .groups-applet .dropdown-menu li a {
+        border-bottom: 1px solid #e7e7e7;
+        padding: 10px 12px;
+    }
+    
+    .groups-applet .dropdown-menu li a svg {
+        width: 14px;
+        height: 14px;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    
+    .groups-applet .groupDetail .open .groupEditIcon>span {
+        background: #f9f9f9;
+    }
+    
+    .groups-applet .groupDetail .invitePeople svg {
+        width: 14px;
+        height: 14px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    
+    .groups-applet .groupDetail .invitePeople svg path {
+        fill: #fff;
+    }
+    
+    .groups-applet h2 {
+        font-family: 'proximaSemiBold';
+        color: #111111;
+        font-size: 18px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .groups-applet .modal-body h4 {
+        font-family: 'proximaSemiBold';
+        color: #111111;
+        font-size: 16px;
+    }
+    
+    .groups-applet .groupDis {
+        font-size: 14px;
+        color: #111111;
+        line-height: 20px;
+        word-break: break-word;
+    }
+    
+    .groups-applet .allmember {
+        padding-left: 0;
+        list-style: none;
+        margin-bottom: 5px;
+    }
+    
+    .groups-applet .allmember li {
+        border: 1px solid #fff;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        background: #c2c2c2;
+        margin-left: -10px;
+        float: left;
+        overflow: hidden;
+    }
+    
+    .groups-applet .allmember li img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .groups-applet .allmember li .userInitial {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 0;
+        width: 33px;
+        height: 33px;
+        line-height: 33px;
+    }
+    
+    .groups-applet .memberName {
+        font-size: 14px;
+        color: #767676;
+    }
+    
+    .groups-applet .allmember li:first-child {
+        margin-left: 0px;
+    }
+    
+    .groups-applet .curgroupImg img {
+        max-height: 220px;
+    }
+    
+    .groups-applet .historyListItem ul {
+        list-style: none;
+        margin-bottom: 5px;
+        padding-left: 15px;
+    }
+    
+    .groups-applet .historyListItem ul li {
+        font-size: 14px;
+        color: #111111;
+        margin-bottom: 5px;
+    }
+    
+    .groups-applet .historyListItem ul li strong {
+        font-family: 'proximaSemiBold';
+    }
+    
+    .groups-applet .historyListItem span {
+        margin-left: 15px;
+        display: inline-block;
+        color: #767676;
+        margin-bottom: 10px;
+        float: right;
+    }
+    
+    .groups-applet .u8PopupBg .modal-body.height150 {
+        min-height: 150px;
+    }
+    
+    
+    .groupList .mamberIcon svg {
+        width: 100%;
+        height: 100%;
+        fill: #fff;
+    }
+</style>
+<div class="proximaFont page-container groups-applet" style="margin-top:20px;">
+    <div class="sm_webAppletContentPadding">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="groupBanner">
+                    <img alt="Group Banner Image" ng-src="{{currentgroup.img}}">
+                </div>
+            </div>
+            <div class="col-md-6 groupDetail">
+                <div class="row groupContect" id="manageGroup" ng-click="$event.stopPropagation()">
+                    <div class="col-xs-10">
+                        <h2>{{currentgroup.name}}</h2>
+                    </div>
+                    <div class="col-xs-2">
+                        <div class="groupEditIcon dropdown">
+                            <span id="dropdownGroupManage" onclick="event.stopPropagation()" ng-click="openFolderDropDown('dropdownGroupManage')">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+                                    <path d="M55.636,250.364C24.907,250.364,0,275.27,0,306c0,30.73,24.907,55.636,55.636,55.636S111.273,336.73,111.273,306
+                            C111.273,275.27,86.366,250.364,55.636,250.364z M315.273,250.364c-30.73,0-55.636,24.907-55.636,55.636
+                            c0,30.729,24.907,55.636,55.636,55.636c30.729,0,55.636-24.905,55.636-55.636C370.909,275.27,346.003,250.364,315.273,250.364z
+                            M556.364,250.364c-30.73,0-55.636,24.907-55.636,55.636c0,30.729,24.906,55.636,55.636,55.636
+                            C587.093,361.636,612,336.73,612,306C612,275.27,587.093,250.364,556.364,250.364z" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <ul class="dropdown-menu" onclick="event.stopPropagation()">
+                        <li ng-click="showGroupInfo(currentgroup);">
+                            <a href="">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 330 330" style="enable-background:new 0 0 330 330;" xml:space="preserve">
+                                    <path d="M165,0C74.019,0,0,74.02,0,165.001C0,255.982,74.019,330,165,330s165-74.018,165-164.999C330,74.02,255.981,0,165,0z
+                             M165,300c-74.44,0-135-60.56-135-134.999C30,90.562,90.56,30,165,30s135,60.562,135,135.001C300,239.44,239.439,300,165,300z"
+                                    />
+                                    <path d="M164.998,70c-11.026,0-19.996,8.976-19.996,20.009c0,11.023,8.97,19.991,19.996,19.991
+                            c11.026,0,19.996-8.968,19.996-19.991C184.994,78.976,176.024,70,164.998,70z" />
+                                    <path d="M165,140c-8.284,0-15,6.716-15,15v90c0,8.284,6.716,15,15,15c8.284,0,15-6.716,15-15v-90C180,146.716,173.284,140,165,140z
+                            " />
+                                    </svg> Group Information</a>
+                        </li>
+
+                        <li ng-if="false" ng-click="openAssignAdminModal(currentgroup)">
+                            <a href="">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 419.617 419.617" style="enable-background:new 0 0 419.617 419.617;" xml:space="preserve">
+                                        <path d="M48.592,402.617c0,9.35,7.65,17,17,17h288.433c9.35,0,17-7.65,17-17c0-94.067-42.5-174.817-102.283-207.117
+                                            c28.9-18.983,47.883-51.85,47.883-88.967C316.625,47.883,268.742,0,210.092,0S103.275,47.6,103.275,106.533
+                                            c0,37.117,18.983,69.7,47.883,88.967C91.092,227.8,48.592,308.55,48.592,402.617z M209.808,34
+                                            c39.95,0,72.533,32.583,72.533,72.533s-32.583,72.533-72.533,72.533s-72.533-32.583-72.533-72.533S169.858,34,209.808,34z
+                                            M209.808,213.917c66.3,0,120.7,75.65,126.65,171.7h-253.3C89.108,289.567,143.508,213.917,209.808,213.917z"/>
+                                </svg> Assign Admins</a>
+                        </li>
+
+                        <li ng-if="isAdmin && currentgroup.privacy=='R'" ng-click="viewRequests('JOIN')">
+                            <a href="">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                            <path d="M467.819,431.851l-36.651-61.056c-16.896-28.181-25.835-60.437-25.835-93.312V224
+                                                c0-82.325-67.008-149.333-149.333-149.333S106.667,141.675,106.667,224v53.483c0,32.875-8.939,65.131-25.835,93.312
+                                                l-36.651,61.056c-1.984,3.285-2.027,7.403-0.149,10.731c1.899,3.349,5.461,5.419,9.301,5.419h405.333
+                                                c3.84,0,7.403-2.069,9.301-5.419C469.845,439.253,469.803,435.136,467.819,431.851z M72.171,426.667l26.944-44.907
+                                                C118.016,350.272,128,314.219,128,277.483V224c0-70.592,57.408-128,128-128s128,57.408,128,128v53.483
+                                                c0,36.736,9.984,72.789,28.864,104.277l26.965,44.907H72.171z"/>
+                                            <path d="M256,0c-23.531,0-42.667,19.136-42.667,42.667v42.667C213.333,91.221,218.112,96,224,96s10.667-4.779,10.667-10.667
+                                                V42.667c0-11.776,9.557-21.333,21.333-21.333s21.333,9.557,21.333,21.333v42.667C277.333,91.221,282.112,96,288,96
+                                                s10.667-4.779,10.667-10.667V42.667C298.667,19.136,279.531,0,256,0z"/>
+                                            <path d="M302.165,431.936c-3.008-5.077-9.515-6.741-14.613-3.819c-5.099,2.987-6.805,9.536-3.819,14.613
+                                                c2.773,4.715,4.288,10.368,4.288,15.936c0,17.643-14.357,32-32,32c-17.643,0-32-14.357-32-32c0-5.568,1.515-11.221,4.288-15.936
+                                                c2.965-5.099,1.259-11.627-3.819-14.613c-5.141-2.923-11.627-1.259-14.613,3.819c-4.715,8.064-7.211,17.301-7.211,26.731
+                                                C202.667,488.085,226.581,512,256,512s53.333-23.915,53.376-53.333C309.376,449.237,306.88,440,302.165,431.936z"/>
+                                    </svg> View Join Requests</a>
+                        </li>
+                        <li ng-if="isAdmin && currentgroup.privacy=='R'" ng-click="viewRequests('INVITE')">
+                            <a href="">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                            <path d="M467.819,431.851l-36.651-61.056c-16.896-28.181-25.835-60.437-25.835-93.312V224
+                                                c0-82.325-67.008-149.333-149.333-149.333S106.667,141.675,106.667,224v53.483c0,32.875-8.939,65.131-25.835,93.312
+                                                l-36.651,61.056c-1.984,3.285-2.027,7.403-0.149,10.731c1.899,3.349,5.461,5.419,9.301,5.419h405.333
+                                                c3.84,0,7.403-2.069,9.301-5.419C469.845,439.253,469.803,435.136,467.819,431.851z M72.171,426.667l26.944-44.907
+                                                C118.016,350.272,128,314.219,128,277.483V224c0-70.592,57.408-128,128-128s128,57.408,128,128v53.483
+                                                c0,36.736,9.984,72.789,28.864,104.277l26.965,44.907H72.171z"/>
+                                            <path d="M256,0c-23.531,0-42.667,19.136-42.667,42.667v42.667C213.333,91.221,218.112,96,224,96s10.667-4.779,10.667-10.667
+                                                V42.667c0-11.776,9.557-21.333,21.333-21.333s21.333,9.557,21.333,21.333v42.667C277.333,91.221,282.112,96,288,96
+                                                s10.667-4.779,10.667-10.667V42.667C298.667,19.136,279.531,0,256,0z"/>
+                                            <path d="M302.165,431.936c-3.008-5.077-9.515-6.741-14.613-3.819c-5.099,2.987-6.805,9.536-3.819,14.613
+                                                c2.773,4.715,4.288,10.368,4.288,15.936c0,17.643-14.357,32-32,32c-17.643,0-32-14.357-32-32c0-5.568,1.515-11.221,4.288-15.936
+                                                c2.965-5.099,1.259-11.627-3.819-14.613c-5.141-2.923-11.627-1.259-14.613,3.819c-4.715,8.064-7.211,17.301-7.211,26.731
+                                                C202.667,488.085,226.581,512,256,512s53.333-23.915,53.376-53.333C309.376,449.237,306.88,440,302.165,431.936z"/>
+                                    </svg> View Invite Requests</a>
+                        </li>
+
+                        <li ng-click="viewMembers()">
+                            <a href="">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                        <path d="M392.963,199.597c24.96-20.702,40.886-51.937,40.886-86.823C433.848,50.592,383.258,0.002,321.075,0.002
+                                            s-112.772,50.59-112.772,112.772c0,8.128,0.872,16.055,2.514,23.7c-6.422-1.14-13.028-1.737-19.772-1.737
+                                            c-62.183,0-112.772,50.59-112.772,112.772c0,34.883,15.923,66.115,40.879,86.818C49.339,362.789,0,431.394,0,511.317h40.009
+                                            c0-83.282,67.754-151.035,151.035-151.035c62.183,0,112.772-50.59,112.772-112.772c0-8.128-0.872-16.056-2.514-23.701
+                                            c6.422,1.14,13.028,1.737,19.772,1.737c49.078,0,92.746,23.544,120.35,59.916l27.111-30.186
+                                            C448.497,230.958,422.569,211.672,392.963,199.597z M191.045,320.272c-40.121,0-72.763-32.641-72.763-72.763
+                                            c0-40.122,32.642-72.763,72.763-72.763s72.763,32.642,72.763,72.763S231.166,320.272,191.045,320.272z M321.075,185.536
+                                            c-40.121,0-72.763-32.641-72.763-72.763c0-40.122,32.642-72.762,72.763-72.762s72.763,32.641,72.763,72.763
+                                            C393.838,152.897,361.197,185.536,321.075,185.536z"/>
+                                        <polygon points="482.233,299.903 343.271,454.623 264.851,379.974 237.267,408.954 345.519,511.998 512,326.638 		"/>
+                                </svg> View Member(s)</a>
+                        </li>
+                        <li ng-if="isAdmin && currentgroup.privacy=='R'" ng-click="openInvitationModal()">
+                            <a href="">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 419.617 419.617" style="enable-background:new 0 0 419.617 419.617;" xml:space="preserve">
+                                        <path d="M48.592,402.617c0,9.35,7.65,17,17,17h288.433c9.35,0,17-7.65,17-17c0-94.067-42.5-174.817-102.283-207.117
+                                            c28.9-18.983,47.883-51.85,47.883-88.967C316.625,47.883,268.742,0,210.092,0S103.275,47.6,103.275,106.533
+                                            c0,37.117,18.983,69.7,47.883,88.967C91.092,227.8,48.592,308.55,48.592,402.617z M209.808,34
+                                            c39.95,0,72.533,32.583,72.533,72.533s-32.583,72.533-72.533,72.533s-72.533-32.583-72.533-72.533S169.858,34,209.808,34z
+                                            M209.808,213.917c66.3,0,120.7,75.65,126.65,171.7h-253.3C89.108,289.567,143.508,213.917,209.808,213.917z"/>
+                                </svg> Invite People</a>
+                        </li>
+                        <li ng-if="isAdmin && currentgroup.privacy=='P'" ng-click="openInvitationModal()">
+                            <a href="">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 419.617 419.617" style="enable-background:new 0 0 419.617 419.617;" xml:space="preserve">
+                                        <path d="M48.592,402.617c0,9.35,7.65,17,17,17h288.433c9.35,0,17-7.65,17-17c0-94.067-42.5-174.817-102.283-207.117
+                                            c28.9-18.983,47.883-51.85,47.883-88.967C316.625,47.883,268.742,0,210.092,0S103.275,47.6,103.275,106.533
+                                            c0,37.117,18.983,69.7,47.883,88.967C91.092,227.8,48.592,308.55,48.592,402.617z M209.808,34
+                                            c39.95,0,72.533,32.583,72.533,72.533s-32.583,72.533-72.533,72.533s-72.533-32.583-72.533-72.533S169.858,34,209.808,34z
+                                            M209.808,213.917c66.3,0,120.7,75.65,126.65,171.7h-253.3C89.108,289.567,143.508,213.917,209.808,213.917z"/>
+                                </svg> Add Member(s)</a>
+                        </li>
+                        <li ng-if="isMember &&(isAdmin|| currentgroup.privacy=='U'|| currentgroup.privacy=='R')" ng-click="leaveGroup(currentgroup)">
+                            <a href="">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                    <polygon points="512,338.954 483.732,310.686 411.772,382.646 339.812,310.686 311.543,338.954 383.503,410.914 311.543,482.874 
+                                        339.812,511.142 411.772,439.182 483.732,511.142 512,482.874 440.04,410.914 		"/>
+                                    <path d="M255.858,0.142c-81.562,0-147.918,66.356-147.918,147.918c0,50.52,25.465,95.198,64.226,121.894
+                                        c-36.19,12.488-69.36,33.118-97.227,60.984C26.614,379.265,0,443.516,0,511.858h39.978c0-119.037,96.843-215.88,215.88-215.88
+                                        c81.562,0,147.918-66.355,147.918-147.918C403.776,66.498,337.42,0.142,255.858,0.142z M255.858,256
+                                        c-59.518,0-107.94-48.421-107.94-107.94S196.34,40.12,255.858,40.12c59.518,0,107.94,48.421,107.94,107.94
+                                        S315.376,256,255.858,256z"/>
+                            </svg> Leave Group</a>
+                        </li>
+                        <li ng-if="isAdmin" ng-click="deleteGroup(currentgroup)">
+                            <a href="">
+                                <svg viewBox="1 1 511.99998 511.99998" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m256 0c-141.386719 0-256 114.613281-256 256s114.613281 256 256 256 256-114.613281 256-256c-.167969-141.316406-114.683594-255.832031-256-256zm0 480c-123.710938 0-224-100.289062-224-224s100.289062-224 224-224 224 100.289062 224 224c-.132812 123.65625-100.34375 223.867188-224 224zm0 0"
+                                    />
+                                    <path d="m380.449219 131.550781c-6.25-6.246093-16.378907-6.246093-22.625 0l-101.824219 101.824219-101.824219-101.824219c-6.140625-6.355469-16.269531-6.53125-22.625-.390625-6.355469 6.136719-6.53125 16.265625-.390625 22.621094.128906.132812.257813.265625.390625.394531l101.824219 101.824219-101.824219 101.824219c-6.355469 6.136719-6.53125 16.265625-.390625 22.625 6.136719 6.355469 16.265625 6.53125 22.621094.390625.132812-.128906.265625-.257813.394531-.390625l101.824219-101.824219 101.824219 101.824219c6.355469 6.136719 16.484375 5.960937 22.621093-.394531 5.988282-6.199219 5.988282-16.03125 0-22.230469l-101.820312-101.824219 101.824219-101.824219c6.246093-6.246093 6.246093-16.375 0-22.625zm0 0"
+                                    />
+                                </svg> Delete Group</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 marginBottom10px">
+                        <ul class="mamberLabel">
+                            <li>
+                                <svg viewBox="0 0 511.99981 511" width="511pt" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m296.464844 336.097656c-12.519532-8.734375-25.898438-15.851562-39.890625-21.289062 18.613281-16.917969 30.960937-40.617188 33.109375-67.148438 28.226562-27.503906 65.226562-42.582031 104.890625-42.582031 30.964843 0 60.695312 9.324219 85.984375 26.960937 9.0625 6.320313 21.523437 4.101563 27.84375-4.960937 6.316406-9.058594 4.097656-21.523437-4.960938-27.839844-12.519531-8.734375-25.902344-15.847656-39.894531-21.289062 20.539063-18.667969 33.453125-45.585938 33.453125-75.460938 0-56.238281-45.75-101.988281-101.988281-101.988281-56.234375 0-101.984375 45.75-101.984375 101.988281 0 29.753907 12.808594 56.574219 33.207031 75.234375-2.792969 1.074219-5.570313 2.210938-8.320313 3.421875-12.515624 5.507813-24.28125 12.28125-35.222656 20.234375-15.089844-37.488281-51.828125-64.019531-94.652344-64.019531-56.234374 0-101.988281 45.75-101.988281 101.984375 0 29.671875 12.738281 56.417969 33.027344 75.070312-54.246094 20.324219-98.230469 63.976563-116.136719 119.648438-5.9375 18.460938-2.792968 38.039062 8.628906 53.714844 11.421876 15.671875 29.09375 24.660156 48.484376 24.660156h173.980468c11.042969 0 19.996094-8.953125 19.996094-20 0-11.042969-8.953125-19.996094-19.996094-19.996094h-173.980468c-6.464844 0-12.355469-2.996094-16.164063-8.222656s-4.855469-11.753906-2.878906-17.910156c19.765625-61.453125 80.046875-104.371094 146.589843-104.371094 30.960938 0 60.695313 9.324219 85.984376 26.960938 9.058593 6.320312 21.523437 4.097656 27.84375-4.960938 6.316406-9.058594 4.097656-21.523438-4.964844-27.839844zm98.546875-295.601562c34.183593 0 61.992187 27.808594 61.992187 61.992187 0 34.179688-27.808594 61.992188-61.992187 61.992188-34.179688 0-61.992188-27.8125-61.992188-61.992188 0-34.183593 27.8125-61.992187 61.992188-61.992187zm-206.972657 136.855468c34.183594 0 61.992188 27.8125 61.992188 61.992188 0 34.183594-27.808594 61.992188-61.992188 61.992188-34.183593 0-61.992187-27.808594-61.992187-61.992188 0-34.179688 27.808594-61.992188 61.992187-61.992188zm323.960938 240.097657c0 11.042969-8.953125 19.996093-20 19.996093h-54.992188v54.992188c0 11.046875-8.953124 20-19.996093 20-11.046875 0-20-8.953125-20-20v-54.992188h-54.992188c-11.042969 0-19.996093-8.953124-19.996093-19.996093 0-11.046875 8.953124-20 19.996093-20h54.992188v-54.992188c0-11.042969 8.953125-19.996093 20-19.996093 11.042969 0 19.996093 8.953124 19.996093 19.996093v54.992188h54.992188c11.046875 0 20 8.953125 20 20zm0 0"
+                                    />
+                                </svg> {{currentgroup._members.length + currentgroup.groupMembers.groups.length}} Member{{(currentgroup._members.length + currentgroup.groupMembers.groups.length)>1?'s':''}}</li>
+                            <li>
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 467.5 467.5" style="enable-background:new 0 0 467.5 467.5;" xml:space="preserve">
+                                    <path d="M114.183,467.5h239.133c38.817,0,70.267-30.6,70.267-69.417V242.817c0-31.45-19.833-58.367-51-67.15V126.65
+                            C372.583,57.233,317.333,0,247.917,0h-28.333c-69.417,0-127.5,56.95-127.5,126.65v49.017c-28.333,8.783-48.167,35.7-48.167,67.15
+                            v155.267C43.917,436.9,75.367,467.5,114.183,467.5z M219.583,34h28.333c50.717,0,90.667,41.933,90.667,92.65v46.183h-212.5V126.65
+                            C126.083,75.933,168.867,34,219.583,34z M389.583,397.233c0,20.117-16.15,36.267-36.267,36.267H114.183
+                            c-20.117,0-36.267-16.15-36.267-36.267V243.1c0-20.117,16.15-36.267,36.267-36.267h239.133c20.117,0,36.267,16.15,36.267,36.267
+                            L389.583,397.233L389.583,397.233z" />
+                                    <path d="M228.083,391c9.35,0,17-7.65,17-17v-53.833c0-9.35-7.65-17-17-17c-9.35,0-17,7.65-17,17V374
+                            C211.083,383.35,218.733,391,228.083,391z" />
+                                    </g>
+                                    </svg>
+                                <span ng-if="currentgroup.privacy == 'R'">Restricted group</span>
+                                <span ng-if="currentgroup.privacy == 'P'">Private group</span>
+                                <span ng-if="currentgroup.privacy == 'U'">Public group</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 marginBottom10px">
+                        <ul class="allmember">
+                            <li ng-repeat="mem in currentgroup._members | limitTo:5">
+                                <img alt="member Icon" ng-if="mem.user[0].profileImage" ng-src="{{mem.user[0].profileImage}}">
+                                <div class="userInitial" ng-style="{ background: randomBackground(mem.user[0].firstName.split(' ')[0][0],mem.user[0].lastName.split(' ')[0][0]) }" ng-if="mem.user[0].profileImage == ''|| mem.user[0].profileImage == null">
+                                    <span class=" verticalAlignMiddle textcenter text-uppercase fontSize16">{{mem.user[0].firstName.split(' ')[0][0]}}{{mem.user[0].lastName.split(' ')[0][0]}}</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="btn btnLightBlue btn-primary-bordered invitePeople marginLeft10px" ng-if="isAdmin&&currentgroup.privacy=='R'" ng-click="openInvitationModal()">
+                            <svg class="themeColorSvgPath" viewBox="0 0 511.99981 511" width="511pt" xmlns="http://www.w3.org/2000/svg">
+                                <path d="m296.464844 336.097656c-12.519532-8.734375-25.898438-15.851562-39.890625-21.289062 18.613281-16.917969 30.960937-40.617188 33.109375-67.148438 28.226562-27.503906 65.226562-42.582031 104.890625-42.582031 30.964843 0 60.695312 9.324219 85.984375 26.960937 9.0625 6.320313 21.523437 4.101563 27.84375-4.960937 6.316406-9.058594 4.097656-21.523437-4.960938-27.839844-12.519531-8.734375-25.902344-15.847656-39.894531-21.289062 20.539063-18.667969 33.453125-45.585938 33.453125-75.460938 0-56.238281-45.75-101.988281-101.988281-101.988281-56.234375 0-101.984375 45.75-101.984375 101.988281 0 29.753907 12.808594 56.574219 33.207031 75.234375-2.792969 1.074219-5.570313 2.210938-8.320313 3.421875-12.515624 5.507813-24.28125 12.28125-35.222656 20.234375-15.089844-37.488281-51.828125-64.019531-94.652344-64.019531-56.234374 0-101.988281 45.75-101.988281 101.984375 0 29.671875 12.738281 56.417969 33.027344 75.070312-54.246094 20.324219-98.230469 63.976563-116.136719 119.648438-5.9375 18.460938-2.792968 38.039062 8.628906 53.714844 11.421876 15.671875 29.09375 24.660156 48.484376 24.660156h173.980468c11.042969 0 19.996094-8.953125 19.996094-20 0-11.042969-8.953125-19.996094-19.996094-19.996094h-173.980468c-6.464844 0-12.355469-2.996094-16.164063-8.222656s-4.855469-11.753906-2.878906-17.910156c19.765625-61.453125 80.046875-104.371094 146.589843-104.371094 30.960938 0 60.695313 9.324219 85.984376 26.960938 9.058593 6.320312 21.523437 4.097656 27.84375-4.960938 6.316406-9.058594 4.097656-21.523438-4.964844-27.839844zm98.546875-295.601562c34.183593 0 61.992187 27.808594 61.992187 61.992187 0 34.179688-27.808594 61.992188-61.992187 61.992188-34.179688 0-61.992188-27.8125-61.992188-61.992188 0-34.183593 27.8125-61.992187 61.992188-61.992187zm-206.972657 136.855468c34.183594 0 61.992188 27.8125 61.992188 61.992188 0 34.183594-27.808594 61.992188-61.992188 61.992188-34.183593 0-61.992187-27.808594-61.992187-61.992188 0-34.179688 27.808594-61.992188 61.992187-61.992188zm323.960938 240.097657c0 11.042969-8.953125 19.996093-20 19.996093h-54.992188v54.992188c0 11.046875-8.953124 20-19.996093 20-11.046875 0-20-8.953125-20-20v-54.992188h-54.992188c-11.042969 0-19.996093-8.953124-19.996093-19.996093 0-11.046875 8.953124-20 19.996093-20h54.992188v-54.992188c0-11.042969 8.953125-19.996093 20-19.996093 11.042969 0 19.996093 8.953124 19.996093 19.996093v54.992188h54.992188c11.046875 0 20 8.953125 20 20zm0 0"
+                                />
+                            </svg>Invite People</button>
+                    </div>
+                    <div class="col-xs-12 marginBottom10px">
+                        <p>
+                            {{currentgroup.description}}
+                        </p>
+                    </div>
+                    <div class="col-xs-12" ng-if="!isMember">
+                        <button class="btn btn-primary" ng-if="currentgroup.privacy=='R'" ng-click="applyJoinGroup(currentgroup)">Request to join group</button>
+                        <button class="btn btn-primary" ng-if="currentgroup.privacy=='U'" ng-click="applyJoinGroup(currentgroup)">Join group</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Group members -->
+    <div class="modal fade u8PopupBg" id="viewMembers" tabindex="-1" role="dialog" aria-labelledby="viewMembers">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Group Member{{currentgroup._members.length>1?'s':''}} - {{currentgroup.name}}</h4>
+                </div>
+                <div class="modal-body" ng-class="{'height150':currentgroup._members.length < 10}">
+                         <div class="memberList" ng-repeat="group in currentgroup.groupMembers.groups" ng-if="!groupMembersLoading">
+            <div class="memberIamge">
+              
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 508 508" style="enable-background:new 0 0 508 508;" xml:space="preserve"><path d="M108.6,143.45c-30.2,0-54.7,24.5-54.7,54.7c0,30.1,24.5,54.7,54.7,54.7c30.2,0,54.7-24.5,54.7-54.7C163.3,167.95,138.8,143.45,108.6,143.45z M108.6,224.65c-14.6,0-26.5-11.9-26.5-26.5c-0.1-14.6,11.8-26.5,26.5-26.5c14.6,0,26.5,11.9,26.5,26.5C135.1,212.75,123.2,224.65,108.6,224.65z"></path><path d="M254,113.55c-31.3,0-56.8,25.5-56.8,56.8s25.5,56.8,56.8,56.8s56.8-25.5,56.8-56.8S285.3,113.55,254,113.55z M254,197.85c-15.2,0-27.5-12.4-27.5-27.5c0-15.1,12.3-27.5,27.5-27.5s27.5,12.4,27.5,27.5C281.5,185.55,269.1,197.85,254,197.85z"></path><path d="M399.5,143.45c-30.2,0-54.7,24.5-54.7,54.7c0,30.1,24.5,54.7,54.7,54.7s54.7-24.5,54.7-54.7C454.2,167.95,429.7,143.45,399.5,143.45z M399.5,224.65c-14.6,0-26.5-11.9-26.5-26.5c0-14.6,11.9-26.5,26.5-26.5c14.6,0,26.5,11.9,26.5,26.5C426,212.75,414.1,224.65,399.5,224.65z"></path><path d="M399.5,271.85c-17.7,0-35.2,4.4-50.8,12.7c-12.1-15.3-29.3-26.4-49.4-30.4c-29.7-5.9-60.7-5.9-90.4,0c-20,4-37.3,15.1-49.4,30.4c-15.6-8.3-33.1-12.7-50.8-12.7c-60,0-108.7,48.7-108.7,108.5c0,7.8,6.3,14.1,14.1,14.1h479.8c7.8,0,14.1-6.3,14.1-14.1C508,320.55,459.3,271.85,399.5,271.85z M140.8,338.15v28.2H29.5c6.7-37.6,39.6-66.2,79.1-66.2c13,0,25.7,3.3,37.1,9.2C142.5,318.35,140.8,328.05,140.8,338.15z M339,366.25H169v-28.2c0-27.4,19.1-51,45.3-56.3c26.1-5.2,53.4-5.2,79.5,0c26.2,5.3,45.2,29,45.2,56.4V366.25z M367.3,366.25v-28.2c0-10-1.7-19.7-4.9-28.8c11.4-6,24.2-9.2,37.2-9.2c39.5,0,72.4,28.6,79.1,66.2H367.3z"></path></svg>
+              <!--<div class="userInitial" ng-style="{ background: randomBackground(group.charAt(0),group.charAt(1)) }" >
+                <span class="displayTableCell verticalAlignMiddle textcenter text-uppercase fontSize16 ng-binding">{{group.charAt(0)}}{{group.charAt(1)}}</span>
+              </div>-->
+            </div>
+            <div class="memberDetails">
+              <h4>{{group}}</h4>
+            </div>
+            <div class="memberAction" ng-if="isAdmin">
+              <span ng-click="removeGroupFromGroup(group);" title="delete">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 498.383 498.383" xml:space="preserve">
+                           <path d="M38.108,149.883h34v331.5c0,9.35,7.65,17,17,17h311.667c9.35,0,17-7.65,17-17v-331.5h42.5c9.35,0,17-7.65,17-17s-7.65-17-17-17h-81.033c-0.567-14.733-4.25-50.15-30.883-78.2C324.842,12.75,290.558,0,246.075,0s-77.917,12.75-99.167,37.967c-23.517,27.767-24.65,62.333-23.8,77.917h-85c-9.35,0-17,7.65-17,17S28.758,149.883,38.108,149.883z M172.408,59.783C186.858,42.5,211.508,34,245.792,34c34.567,0,60.633,9.067,77.35,26.633c18.417,19.267,21.25,45.05,21.817,55.25h-187.85C156.258,107.1,155.692,79.9,172.408,59.783z M383.775,149.883v314.5H106.108v-314.5H383.775z"/>
+                           <path d="M191.108,416.217c9.35,0,17-7.65,17-17v-195.5c0-9.35-7.65-17-17-17c-9.35,0-17,7.65-17,17v195.5C174.108,408.567,181.758,416.217,191.108,416.217z"/>
+                           <path d="M298.775,416.217c9.35,0,17-7.65,17-17v-195.5c0-9.35-7.65-17-17-17s-17,7.65-17,17v195.5C281.775,408.567,289.425,416.217,298.775,416.217z"/>
+                        </svg>
+                     </span>
+            </div>
+          </div>
+                    <div class="memberList" ng-if="!loadGroupMembersPending" ng-repeat="sgu in currentgroup._members">
+                        <div class="memberIamge">
+                            <img alt="profile Image" ng-if="sgu.user[0].profileImage" src="{{sgu.user[0].profileImage}}">
+                            <div class="userInitial" ng-style="{ background: randomBackground(sgu.user[0].firstName.split(' ')[0][0],sgu.user[0].lastName.split(' ')[0][0]) }" ng-if="sgu.user[0].profileImage == ''||sgu.user[0].profileImage == null">
+                                <span class="displayTableCell verticalAlignMiddle textcenter text-uppercase fontSize16 ng-binding">{{sgu.user[0].firstName.split(' ')[0][0]}}{{sgu.user[0].lastName.split(' ')[0][0]}}</span>
+                            </div>
+                        </div>
+                        <div class="memberDetails">
+                            <h4>{{sgu.user[0].firstName}} {{sgu.user[0].lastName}}</h4>
+                        </div>
+
+                        <div class="memberAction" ng-if="isAdmin && sgu.user[0].email!=$root.user.email">
+                            <span ng-click="removeUserFromGroup(sgu);" title="delete">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 498.383 498.383" xml:space="preserve"><path d="M38.108,149.883h34v331.5c0,9.35,7.65,17,17,17h311.667c9.35,0,17-7.65,17-17v-331.5h42.5c9.35,0,17-7.65,17-17s-7.65-17-17-17h-81.033c-0.567-14.733-4.25-50.15-30.883-78.2C324.842,12.75,290.558,0,246.075,0s-77.917,12.75-99.167,37.967c-23.517,27.767-24.65,62.333-23.8,77.917h-85c-9.35,0-17,7.65-17,17S28.758,149.883,38.108,149.883z M172.408,59.783C186.858,42.5,211.508,34,245.792,34c34.567,0,60.633,9.067,77.35,26.633c18.417,19.267,21.25,45.05,21.817,55.25h-187.85C156.258,107.1,155.692,79.9,172.408,59.783z M383.775,149.883v314.5H106.108v-314.5H383.775z"/><path d="M191.108,416.217c9.35,0,17-7.65,17-17v-195.5c0-9.35-7.65-17-17-17c-9.35,0-17,7.65-17,17v195.5C174.108,408.567,181.758,416.217,191.108,416.217z"/><path d="M298.775,416.217c9.35,0,17-7.65,17-17v-195.5c0-9.35-7.65-17-17-17s-17,7.65-17,17v195.5C281.775,408.567,289.425,416.217,298.775,416.217z"/></svg>
+                        </span>
+                        </div>
+                        <!--<div class="col-md-2">
+                        <div class="mamberAction" ng-click="denyRequest(jreq);">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" style="width: 30px;">
+                                <path d="M17.65,15,29.45,3.2A1.87,1.87,0,1,0,26.8.55L15,12.35,3.2.55A1.87,1.87,0,0,0,.55,3.2L12.35,15,.55,26.8A1.88,1.88,0,0,0,1.88,30a1.83,1.83,0,0,0,1.32-.55L15,17.65l11.8,11.8a1.83,1.83,0,0,0,1.32.55,1.88,1.88,0,0,0,1.33-3.2Z"></path>
+                            </svg>
+                        </div>
+                    </div>-->
+                    </div>
+                
+                    <div class="memberList text-center nodata" ng-if="!currentgroup.groupMembers.groups.length && !currentgroup._members.length&&!groupMembersLoading">
+                        <img alt="nodata icon" class="errorIcon" src="images/notfound.png">
+                        <div class="message">There is no member in this group.</div>
+                    </div>
+                    <div class="memberList text-center" ng-if="groupMembersLoading">
+                        Loading...
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- group member ends -->
+
+    <!-- Invite requests -->
+    <!-- Invite requests -->
+    <div class="modal fade u8PopupBg" id="inviteRequestModal" tabindex="-1" role="dialog" aria-labelledby="inviteRequestModal">
+        <div class="modal-dialog" role="document" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Group Invites- {{currentgroup.name}}</h4>
+                </div>
+                <div class="modal-body" ng-class="{'height150': groupInvites.length < 10}">
+                    <div class="memberList" ng-repeat="inv in groupInvites">
+                        <div class="memberIamge">
+                            <img alt="profile icon" ng-if="inv.invitee.profileImage" ng-src="{{inv.invitee.profileImage}}">
+                            <div class="userInitial" ng-style="{ background: randomBackground(inv.invitee.firstName.split(' ')[0][0],inv.invitee.lastName.split(' ')[0][0]) }" ng-if="inv.invitee.profileImage == ''|| inv.invitee.profileImage == null">
+                                <span class="displayTableCell verticalAlignMiddle textcenter text-uppercase fontSize16 ng-binding">{{inv.invitee.firstName.split(' ')[0][0]}}{{inv.invitee.lastName.split(' ')[0][0]}}</span>
+                            </div>
+                        </div>
+                        <div class="memberDetails">
+                            <h4>{{inv.invitee.firstName}} {{inv.invitee.lastName}}</h4>
+                        </div>
+                        <div class="memberAction">
+                            <span ng-click="withdrawInvite(inv);" title="delete">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 498.383 498.383" xml:space="preserve"><path d="M38.108,149.883h34v331.5c0,9.35,7.65,17,17,17h311.667c9.35,0,17-7.65,17-17v-331.5h42.5c9.35,0,17-7.65,17-17s-7.65-17-17-17h-81.033c-0.567-14.733-4.25-50.15-30.883-78.2C324.842,12.75,290.558,0,246.075,0s-77.917,12.75-99.167,37.967c-23.517,27.767-24.65,62.333-23.8,77.917h-85c-9.35,0-17,7.65-17,17S28.758,149.883,38.108,149.883z M172.408,59.783C186.858,42.5,211.508,34,245.792,34c34.567,0,60.633,9.067,77.35,26.633c18.417,19.267,21.25,45.05,21.817,55.25h-187.85C156.258,107.1,155.692,79.9,172.408,59.783z M383.775,149.883v314.5H106.108v-314.5H383.775z"/><path d="M191.108,416.217c9.35,0,17-7.65,17-17v-195.5c0-9.35-7.65-17-17-17c-9.35,0-17,7.65-17,17v195.5C174.108,408.567,181.758,416.217,191.108,416.217z"/><path d="M298.775,416.217c9.35,0,17-7.65,17-17v-195.5c0-9.35-7.65-17-17-17s-17,7.65-17,17v195.5C281.775,408.567,289.425,416.217,298.775,416.217z"/></svg>
+                        </span>
+                        </div>
+                    </div>
+                    <div ng-if="!groupInvites.length &&!groupInvitesLoading" class="text-center col-xs-12 nodata col-sm-12 col-md-12">
+                        <img alt="nodata icon" class="errorIcon" src="images/notfound.png">
+                        <div class="message">There is no pending request for this group</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Invite requests ends -->
+
+    <!-- User invitation modal start -->
+    <div class="modal fade u8PopupBg" id="inviteUsersModal" tabindex="-1" role="dialog" aria-labelledby="inviteUsersModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" ng-if="currentgroup.privacy=='P'">{{currentgroup.name}} - Add Member(s)</h4>
+                    <h4 class="modal-title" ng-if="currentgroup.privacy!='P'">{{currentgroup.name}} - Invite Member(s)</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="sectionGap">
+                            <!--<h2>Select Members</h2>-->
+                            <div class="inviteMemberMain directionColum ">
+                                <div class="inviteMemberInner">
+                                    <div class="formGroup ">
+                                        <label>Select Groups</label>
+                                        <div class="dropdown ItemShort " tabindex="0" aria-label=" dropdown">
+                                            <button class="btn btn-default" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="ng-binding">{{tobeInvited.groups.length}} Selected</span>
+                                                <span class="fa fa-angle-down pull-right"></span>
+                                            </button>
+                                            <ul class="dropdown-menu groupDropdown" aria-label="shortData">
+                                                <li ng-repeat="group in allGroups" ng-click="$event.stopPropagation()">
+                                                    <a>
+                                                        <div class="control-group">
+                                                            <label class="control control--checkbox font14" ng-click="addGroupToInvitee($index,group);">
+                                                    {{group.group}}
+                                                    <input type="checkbox" ng-checked="isGroupChecked(group, tobeInvited.groups)">
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="formGroup ">
+                                        <label>Individual user</label>
+                                        <div class="input-group Itemsearch">
+                                            <input aria-label="Search" class="form-control  boxShadowNone ng-pristine ng-untouched ng-valid ng-empty" type="text" placeholder="Search" ng-model="userSearchKey" ng-keyup="inviteeSearch(userSearchKey,$event)">
+                                            <span class="input-group-btn">
+                                    <button class="btn borderNone" type="button" ng-click="userSearchKey && inviteeSearch1(userSearchKey,$event)">
+                                        <img alt="Search Icon" src="images/search.png">
+                                    </button>
+                                </span>
+                                        </div>
+                                        <div class="borderRadiusMobile border1px inviteSearchFilter clearfix" ng-if="inviteeSearchResults.data.length">
+                                            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 float-none paddingMobile whiteBackground marginAuto">
+                                                <div class="AddPaddingMobile searchTitle"><label>Search Result</label></div>
+                                                <ul class="userList">
+                                                    <li ng-repeat="u in inviteeSearchResults.data" ng-click="$event.stopPropagation()">
+                                                        {{u.firstName + " " + u.lastNane }}
+                                                        <span class=pull-right ng-click="addUserToInvitee(index,u);$event.stopPropagation();">
+                                                <img src="images/add.png" alt="add icon" > Add
+                                              </span>
+                                                    </li>
+                                                    <li id="msgNoDataFound" ng-if="showErrorMessage">
+                                                        {{errorMessage}}
+                                                    </li>
+                                                   <div ng-show="inviteeSearchResults.hasMore" ng-click="inviteeSearch1(userSearchKey,$event)" class="textcenter padding10px fontSize14 cursorPointer">Load More
+                                                </div>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <h2 class="titlesectionGap" ng-if="tobeInvited.users.length">Added Member{{tobeInvited.users.length>1?'s':''}}</h2>
+                                <div class="addedMember directionColum marginL0px" ng-if="tobeInvited.users.length">
+                                    <div class="memberList groupList" ng-repeat="u in tobeInvited.users track by $index">
+                                        <div class="mamberIcon" ng-style="{ background: randomBackground(u.firstName.split(' ')[0][0],u.lastName.split(' ')[0][0]) }">
+                                            <img alt="profile icon" ng-if="u.profileImage" ng-src="{{u.profileImage}}" />
+                                            <span ng-if="!u.profileImage" class="displayTableCell verticalAlignMiddle textcenter text-uppercase fontSize16">{{u.firstName.split(' ')[0][0]}}{{u.lastName.split(' ')[0][0]}}</span>
+                                        </div>
+                                        <div class="memberDetails">{{u.firstName + " " + u.lastName}}</div>
+                                        <div class="memberAction " ng-click="removeSelectedUser($index,u);">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                            <path d="M17.65,15,29.45,3.2A1.87,1.87,0,1,0,26.8.55L15,12.35,3.2.55A1.87,1.87,0,0,0,.55,3.2L12.35,15,.55,26.8A1.88,1.88,0,0,0,1.88,30a1.83,1.83,0,0,0,1.32-.55L15,17.65l11.8,11.8a1.83,1.83,0,0,0,1.32.55,1.88,1.88,0,0,0,1.33-3.2Z"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" ng-if="currentgroup.privacy!='P'" class="btn btn-primary" id="sendInviteBtn" ng-click="invitePeople()">Send Invite(s)</button>
+                    <button type="button" ng-if="currentgroup.privacy=='P'" class="btn btn-primary" id="sendInviteBtn" ng-click="invitePeople()">Add Member(s)</button>
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- user invitation modal ends -->
+
+    <!-- sitegroup information modal start-->
+    <div class="modal fade u8PopupBg" id="groupInfoModal" tabindex="-1" role="dialog" aria-labelledby="groupInfoModal">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Group Information - {{currentgroup.name}}</h4>
+                </div>
+                <div class="modal-body">
+                    <h2>About Group</h2>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-9" ng-class="!currentgroup.img?'col-sm-12':''">
+                            <h4>Group Name</h4>
+                            <div class="groupDis">{{currentgroup.name}}</div>
+                            <h4>Group Description</h4>
+                            <p class="groupDis">{{currentgroup.description}}</p>
+                            <h4>Group Type</h4>
+                            <div class="groupDis">
+                                <span ng-if="currentgroup.privacy == 'R'">Restricted group</span>
+                                <span ng-if="currentgroup.privacy == 'P'">Private group</span>
+                                <span ng-if="currentgroup.privacy == 'U'">Public group</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 curgroupImg" ng-if="currentgroup.img">
+                            <img alt="currentgroup icon" ng-if="currentgroup.img" ng-src="{{currentgroup.img}}" style="width: 100%; height: 100%;">
+                        </div>
+                    </div>
+                    <hr class="borderTop1px" ng-if="currentgroup.privacy=='U' || currentgroup.groupMembers.users.indexOf($root.user.email)!=-1 || currentgroup.groupAdmins.users.indexOf($root.user.email)!=-1" />
+                    <h2 ng-if="currentgroup.privacy=='U' || currentgroup.groupMembers.users.indexOf($root.user.email)!=-1 || currentgroup.groupAdmins.users.indexOf($root.user.email)!=-1">Members</h2>
+                    <div class="row" ng-if="currentgroup.privacy=='U' || currentgroup.groupMembers.users.indexOf($root.user.email)!=-1 || currentgroup.groupAdmins.users.indexOf($root.user.email)!=-1">
+                        <div class="col-md-6">
+                            <h4>Group Member{{(currentgroup.groupMembers.groups.length+currentgroup._members.length)>1?'s':''}}</h4>
+                            <div class="marginBottom10px" ng-if="currentgroup.groupMembers.groups.length > 0">
+                                <ul class="allmember">
+                                    <li ng-repeat="mem in currentgroup.groupMembers.groups">
+                                        <img alt="member Icon" ng-if="mem.user[0].profileImage" ng-src="{{mem.user[0].profileImage}}">
+                                        <div class="userInitial" ng-style="{ background: randomBackground(mem.charAt(0),mem.charAt(1)) }" ng-if="!mem.user[0].profileImage">
+                                            <span class=" verticalAlignMiddle textcenter text-uppercase fontSize16">{{mem.charAt(0)+mem.charAt(1)}}</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                                <div class="" ng-if="currentgroup.groupMembers.groups.length > 0">
+                                    <span class="memberName" ng-repeat="group in currentgroup.groupMembers.groups">{{group}} (Group)<i ng-show="!$last">,</i></span>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="" ng-if="currentgroup._members.length > 0">
+                                <ul class="allmember">
+                                    <li ng-repeat="mem in currentgroup._members">
+                                        <img alt="member Icon" ng-if="mem.user[0].profileImage" ng-src="{{mem.user[0].profileImage}}">
+                                        <div class="userInitial" ng-style="{ background: randomBackground(mem.user[0].firstName.split(' ')[0][0],mem.user[0].lastName.split(' ')[0][0]) }" ng-if="mem.user[0].profileImage == ''|| mem.user[0].profileImage == null">
+                                            <span class=" verticalAlignMiddle textcenter text-uppercase fontSize16">{{mem.user[0].firstName.split(' ')[0][0]}}{{mem.user[0].lastName.split(' ')[0][0]}}</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                                <span class="memberName" ng-repeat="user in currentgroup._members">{{user.user[0].firstName+' '+ user.user[0].lastName}}<i ng-show="!$last">,</i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Group Admin{{(currentgroup.groupAdmins.groups.length+selectedGroupAdminsDetails.length)>0?'s':''}}</h4>
+                            <div class="marginBottom10px" ng-if="currentgroup.groupAdmins.groups.length > 0">
+                                <ul class="allmember">
+                                    <li ng-repeat="mem in currentgroup.groupAdmins.groups">
+                                        <img alt="member Icon" ng-if="mem.user[0].profileImage" ng-src="{{mem.user[0].profileImage}}">
+                                        <div class="userInitial" ng-style="{ background: randomBackground(mem.charAt(0),mem.charAt(1)) }" ng-if="!mem.user[0].profileImage">
+                                            <span class=" verticalAlignMiddle textcenter text-uppercase fontSize16">{{mem.charAt(0)+mem.charAt(1)}}</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                                <span class="memberName" ng-repeat="group in currentgroup.groupAdmins.groups">{{group}} (Group) <i ng-show="!$last">,</i></span>
+                            </div>
+                            <div class="" ng-if="selectedGroupAdminsDetails.length > 0">
+                                <ul class="allmember">
+                                    <li ng-repeat="mem in selectedGroupAdminsDetails">
+                                        <img alt="member Icon" ng-if="mem.user[0].profileImage" ng-src="{{mem.user[0].profileImage}}">
+                                        <div class="userInitial" ng-style="{ background: randomBackground(mem.user[0].firstName.split(' ')[0][0],mem.user[0].lastName.split(' ')[0][0]) }" ng-if="mem.user[0].profileImage == ''|| mem.user[0].profileImage == null">
+                                            <span class=" verticalAlignMiddle textcenter text-uppercase fontSize16">{{mem.user[0].firstName.split(' ')[0][0]}}{{mem.user[0].lastName.split(' ')[0][0]}}</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+
+                                <span class="memberName" ng-repeat="u in selectedGroupAdminsDetails">{{u.user[0].firstName+ ' ' + u.user[0].lastName }}<i ng-show="!$last">,</i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="borderTop1px" ng-if="currentgroup.groupMembers.users.indexOf($root.user.email)!=-1 || currentgroup.groupAdmins.users.indexOf($root.user.email)!=-1" />
+                    <h2 ng-if="currentgroup.groupMembers.users.indexOf($root.user.email)!=-1 || currentgroup.groupAdmins.users.indexOf($root.user.email)!=-1">History</h2>
+                    <div class="row" ng-if="currentgroup.groupMembers.users.indexOf($root.user.email)!=-1 || currentgroup.groupAdmins.users.indexOf($root.user.email)!=-1">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <h4>Created</h4>
+                            <div ng-if="selectedGroupOwnerInfo.firstName">By
+                                <label>{{selectedGroupOwnerInfo.firstName+' ' + selectedGroupOwnerInfo.lastName}}</label>
+                            </div>
+                            <div ng-if="currentgroup.createdOn">on
+                                <label>{{currentgroup.createdOn|date:'MMMM dd, yyyy'}}</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 historyListItem" ng-repeat="historyItem in currentgroup._history" ng-if="historyItem.fieldsUpdated.length">
+                            <ul>
+                                <li ng-repeat="field in historyItem.fieldsUpdated" ng-if="field.name!='img' && field.name!='groupAdmins.users'">
+                                    User <strong>{{historyItem.createdBy}}</strong> has set group <strong>{{field.name}}</strong> to <strong>{{::getHValue(field.newValue)}}</strong>
+                                </li>
+                            </ul>
+                            <span>On:{{historyItem.createdOn|date}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade u8PopupBg" id="joinRequestModal" tabindex="-1" role="dialog" aria-labelledby="joinRequestModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Group Join Requests - {{currentgroup.name}}</h4>
+                </div>
+                <div class="modal-body" ng-class="{'height150': currentgroup.joinrequests.length < 10}">
+                    <div class="memberList" ng-repeat="jreq in currentgroup.joinrequests">
+                        <div class="memberIamge">
+                            <img alt="profile icon" ng-if="jreq.userdetails[0].profileImage" ng-src="{{jreq.userdetails[0].profileImage}}">
+                            <div class="userInitial" ng-style="{ background: randomBackground(jreq.userdetails[0].firstName.split(' ')[0][0],jreq.userdetails[0].lastName.split(' ')[0][0]) }" ng-if="jreq.userdetails[0].profileImage == ''|| jreq.userdetails[0].profileImage == null">
+                                <span class="displayTableCell verticalAlignMiddle textcenter text-uppercase fontSize16">{{jreq.userdetails[0].firstName.split(' ')[0][0]}}{{jreq.userdetails[0].lastName.split(' ')[0][0]}}</span>
+                            </div>
+                        </div>
+                        <div class="memberDetails">
+                            <h4>{{jreq.userdetails[0].firstName}} {{jreq.userdetails[0].lastName}}</h4>
+                        </div>
+                        <div class="memberAction">
+                            <span ng-click="acceptRequest(jreq,$index);" title="accept">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="448.8px" height="448.8px" viewBox="0 0 448.8 448.8" style="enable-background:new 0 0 448.8 448.8;" xml:space="preserve"><polygon points="142.8,323.85 35.7,216.75 0,252.45 142.8,395.25 448.8,89.25 413.1,53.55 "/></svg>
+                        </span>
+                            <span ng-click="denyRequest(jreq,$index);" title="delete">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 498.383 498.383" xml:space="preserve"><path d="M38.108,149.883h34v331.5c0,9.35,7.65,17,17,17h311.667c9.35,0,17-7.65,17-17v-331.5h42.5c9.35,0,17-7.65,17-17s-7.65-17-17-17h-81.033c-0.567-14.733-4.25-50.15-30.883-78.2C324.842,12.75,290.558,0,246.075,0s-77.917,12.75-99.167,37.967c-23.517,27.767-24.65,62.333-23.8,77.917h-85c-9.35,0-17,7.65-17,17S28.758,149.883,38.108,149.883z M172.408,59.783C186.858,42.5,211.508,34,245.792,34c34.567,0,60.633,9.067,77.35,26.633c18.417,19.267,21.25,45.05,21.817,55.25h-187.85C156.258,107.1,155.692,79.9,172.408,59.783z M383.775,149.883v314.5H106.108v-314.5H383.775z"/><path d="M191.108,416.217c9.35,0,17-7.65,17-17v-195.5c0-9.35-7.65-17-17-17c-9.35,0-17,7.65-17,17v195.5C174.108,408.567,181.758,416.217,191.108,416.217z"/><path d="M298.775,416.217c9.35,0,17-7.65,17-17v-195.5c0-9.35-7.65-17-17-17s-17,7.65-17,17v195.5C281.775,408.567,289.425,416.217,298.775,416.217z"/></svg>
+                        </span>
+                        </div>
+                    </div>
+                    <div ng-if="!currentgroup.joinrequests.length&&!joinRequestsLoading" class="text-center nodata col-xs-12 col-sm-12 col-md-12">
+                        <img alt="nodata icon" class="errorIcon" src="images/notfound.png">
+                        <div class="message">There is no pending request for this group</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade u8PopupBg" id="leaveGroup" tabindex="-1" role="dialog" aria-labelledby="leaveGroup">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Leave- {{currentgroup.name}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row" ng-if="currentgroup.groupAdmins.users.length<=1">
+                        <div class="col-xs-12 col-md-12 col-lg-12 col-sm-12">
+                            Do you really want to leave this group? Leaving the group now means there will be nobody to manage this group. You can promote group members to group admin.
+                        </div>
+                        <div class="col-xs-12 col-md-12 col-lg-12 col-sm-12 marginTop10px" ng-if="otherassignable">
+                            <div class="formGroup  marginTop10px">
+                                <label>Select member</label>
+                                <div class="dropdown ItemShort " tabindex="0" aria-label=" dropdown">
+                                    <button class="btn btn-default" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="ng-binding">{{toBeAdmins.length}} Selected</span>
+                        <span class="fa fa-angle-down pull-right"></span>
+                      </button>
+                                    <ul class="dropdown-menu groupDropdown" aria-label="shortData">
+                                        <li ng-repeat="u in currentgroup._members" ng-click="addUserTobeAdmin($index,u);$event.stopPropagation();" ng-if="currentgroup.groupMembers.users.indexOf(u.user[0].email)==-1">
+                                            <a>
+                                                <div class="control-group">
+                                                    <label class="control control--checkbox font14">
+                            {{u.user[0].firstName + " " + u.user[0].lastName}}
+                                <input type="checkbox" ng-checked="isGroupChecked(u, toBeAdmins)">
+                                <div class="control__indicator"></div>
+                              </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row" ng-if="currentgroup.groupAdmins.users.length>1">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            Do you want to leave this group?
+                        </div>
+                        <div class="clearfix"></div>
+
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary pull-left" ng-click="assignAdminToGroup(currentgroup,$event)" ng-if="false&&otherassignable && currentgroup.groupAdmins.users.length<=1">Assign Admins</button>
+                    <button class="btn btn-danger" ng-click="leaveGroup1(currentgroup)">Leave group</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade u8PopupBg" id="assignAdminModal" tabindex="-1" role="dialog" aria-labelledby="assignAdminModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Assign Admins- {{currentgroup.name}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12 col-lg-12 col-sm-12">
+                            Here you can promote group members to Admin
+                        </div>
+                        <div class="inviteMemberInner">
+                            <div class="formGroup col-xs-12 col-md-12 col-lg-12 col-sm-12 marginTop10px">
+                                <label>Select member</label>
+                                <div class="dropdown ItemShort " tabindex="0" aria-label=" dropdown">
+                                    <button class="btn btn-default" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="ng-binding">{{toBeAdmins.length}} Selected</span>
+                        <span class="fa fa-angle-down pull-right"></span>
+                      </button>
+                                    <ul class="dropdown-menu groupDropdown" aria-label="shortData">
+                                        <li ng-repeat="u in assignableAdmins" ng-click="addUserTobeAdmin($index,u);$event.stopPropagation()" ng-if="currentgroup.groupAdmins.users.indexOf(u.user[0].email)==-1">
+                                            <a>
+                                                <div class="control-group">
+                                                    <label class="control control--checkbox font14">
+                            {{u.user[0].firstName + " " + u.user[0].lastName}}
+                                <input type="checkbox" ng-checked="isGroupChecked(u, toBeAdmins)">
+                                <div class="control__indicator"></div>
+                              </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary " ng-click="assignAdminToGroup(currentgroup,$event, true)">Assign Admins</button>
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- sitegroup information modal ends -->
+
+</div>

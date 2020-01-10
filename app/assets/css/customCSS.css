@@ -1,0 +1,845 @@
+@font-face {
+    font-family: proxima;
+    src: url(../ProximaNovaRegular.otf);
+}
+@font-face {
+    font-family: proximaBold;
+    src: url(../ProximaNovaBold.otf);
+}
+@font-face {
+    font-family: proximaSemiBold;
+    src: url(../ProximaNovaSemibold.otf);
+}
+.proximaSemiBoldFont {
+    font-family: proximaSemiBold;
+}
+.proximaFont {
+    font-family: proxima;
+}
+.proximaBoldFont {
+    font-family: proximaBold;
+}
+/*font size*/
+.font64 , .font64px , .fontSize64 {
+  font-size: 64px
+}
+.font44 , .font44px , .fontSize44 {
+  font-size: 44px
+}
+.font42 , .font42px , .fontSize42 {
+    font-size: 42px;
+}
+.font26 , .font26px,  .fontSize26 {
+  font-size: 26px
+}
+.font24 , .font24px , .fontSize24 {
+  font-size: 24px;
+}
+.font22 , .font22px , .fontSize22 {
+  font-size: 22px;
+}
+.font20, .font20px , .fontSize20 {
+  font-size: 20px;
+}
+.font18, .font18px, .fontSize18 {
+    font-size:18px;
+}
+.font16, .font16px, .fontSize16 {
+    font-size: 16px;
+}
+.font15, .font15px, .fontSize15 {
+    font-size: 15px;
+}
+.font14, .font14px, .fontSize14 {
+  font-size: 14px;
+}
+.font12, .font12px, .fontSize12 {
+  font-size: 12px;
+}
+.font10, .font10px, .fontSize10{
+  font-size: 10px;
+}
+/*font size end*/
+/*font weight */
+.font-weight600 {
+  font-weight: 600px;
+}
+.fontBold {
+  font-weight: 700px !important
+}
+.fontNormal {
+  font-weight: 400px !important
+}
+/*font weight end*/
+
+/*studio mode font size*/
+.studiomode .cmscell .fontSize26 {
+    font-size: 24px
+}
+.studiomode .cmscell .fontSize24 {
+    font-size: 22px;
+}
+.studiomode .cmscell .font18 {
+    font-size: 16px;
+}
+.studiomode .cmscell .font20,
+.studiomode .cmscell .fontSize20 {
+    font-size: 18px;
+}
+.studiomode .cmscell .font16,
+.studiomode .cmscell .fontSize16 {
+    font-size: 14px;
+}
+.studiomode .cmscell .fontSize15 {
+    font-size: 13px
+}
+.studiomode .cmscell .font14 {
+    font-size: 12px;
+}
+.studiomode .cmscell .font12 {
+    font-size: 10px;
+}
+
+/*icon width*/
+.icon10,
+.icon10 svg {
+    width: 10px;
+    max-height: 10px;
+}
+.icon12,
+.icon12 svg {
+    width: 12px;
+    max-height: 12px;
+}
+.icon14,
+.icon14 svg {
+    width: 14px;
+    max-height: 14px;
+}
+.icon16,
+.icon16 svg {
+    width: 16px;
+    max-height: 16px;
+}
+.icon18,
+.icon18  svg {
+    width: 18px;
+    max-height: 18px;
+}
+.icon20,
+.icon20 svg,
+.fonticon {
+    width: 20px;
+    max-height: 20px;
+}
+.icon24,
+.icon24 svg {
+    width: 24px;
+    max-height: 24px;
+}
+.icon26,
+.icon26 svg {
+    width: 26px;
+    max-height: 26px;
+}
+.icon30,
+.icon30 svg {
+    width: 30px;
+    max-height: 30px;
+}
+.icon32,
+.icon32 svg {
+    width: 32px;
+    max-height: 32px;
+}
+.icon36,
+.icon36 svg {
+    width: 36px;
+    max-height: 36px;
+}
+.icon40,
+.icon40 svg {
+    width: 40px;
+    max-height: 40px;
+}
+.icon48,
+.icon48 svg {
+    width: 48px;
+    max-height: 48px;
+}
+.icon50,
+.icon50 svg {
+    width: 50px;
+    max-height: 50px;
+}
+.icon52,
+.icon52 svg {
+    width: 52px;
+    max-height: 52px;
+}
+.iconWidth12px {
+    height: auto;
+    width: auto;
+    max-width: 12px;
+    max-height: 12px
+}
+.iconWidth20px {
+    height: auto;
+    width: auto;
+    max-width: 20px;
+    max-height: 20px
+}
+.iconWidth30px {
+    height: auto;
+    width: auto;
+    max-width: 30px;
+    max-height: 30px
+}
+
+/*icon width*/
+
+/*line height css*/
+.lineheight30 ,.lineheight30px {
+  line-height: 30px
+}
+.lineHeight28,.lineHeight28px{
+  line-height: 28px
+}
+.lineHeight26,.lineHeight26px{
+  line-height: 26px
+}
+.lineheight24,.lineheight24px {
+  line-height: 24px
+}
+.lineheight22,.lineheight22px{
+  line-height: 22px
+}
+.lineheight20,.lineheight20px {
+  line-height: 20px
+}
+.lineheight18,.lineheight18px {
+  line-height: 18px
+}
+.lineheight16,.lineheight16px{
+  line-height: 16px
+}
+/*line height css*/
+/*padding class*/
+.pl,
+.pl0,
+.pl0px {
+    padding-left: 0px;
+}
+.pt,
+.pt0,
+.pt0px {
+    padding-top: 0px;
+}
+.pr,
+.pr0,
+.pr0px {
+    padding-right: 0px;
+}
+.pb,
+.pb0,
+.pb0px {
+    padding-bottom: 0px;
+}
+.paddingLeft0pxRight0px,
+.pl0pxpr0px,
+.no-side-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.paddTop9 {
+    padding-top: 9px;
+}
+.paddingTop0px {
+    padding-top: 0px;
+}
+.paddingBottom0px {
+    padding-bottom: 0px;
+}
+.paddingTB5,
+.paddingTB5px {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.padding5,
+.padding5px {
+    padding: 5px;
+}
+.paddingTop5,
+.paddingTop5px {
+    padding-top: 5px;
+}
+.paddingBottom5,
+.paddingBottom5px {
+    padding-bottom: 5px;
+}
+.paddingLeft5,
+.paddingLeft5px {
+    padding-left: 5px;
+}
+.paddingRight5,
+.paddingRight5px {
+    padding-right: 5px;
+}
+.paddingTB10,
+.paddingTB10px {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.padding10,
+.padding10px {
+    padding: 10px;
+}
+.paddingTop10,
+.paddingTop10px {
+    padding-top: 10px;
+}
+.paddingTop20,
+.paddingTop20px {
+    padding-top: 20px;
+}
+.paddingBottom10,
+.paddingBottom10px {
+    padding-bottom: 10px;
+}
+.paddingLeft10,
+.paddingLeft10px {
+    padding-left: 10px;
+}
+.paddingRight10,
+.paddingRight10px {
+    padding-right: 10px;
+}
+.paddingTB15,
+.paddingTB15px {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.padding15,
+.padding15px {
+    padding: 15px;
+}
+.paddingTop15,
+.paddingTop15px {
+    padding-top: 15px;
+}
+.paddingBottom15,
+.paddingBottom15px {
+    padding-bottom: 15px;
+}
+.paddingLeft15,
+.paddingLeft15px {
+    padding-left: 15px;
+}
+.paddingRight15,
+.paddingRight15px {
+    padding-right: 15px;
+}
+.padding30,
+.padding30px {
+    padding: 30px;
+}
+.paddingTop30,
+.paddingTop30px {
+    padding-top: 30px;
+}
+.paddingBottom30,
+.paddingBottom30px {
+    padding-bottom: 30px;
+}
+.paddingLeft30,
+.paddingLeft30px {
+    padding-left: 30px;
+}
+.paddingRight30,
+.paddingRight30px {
+    padding-right: 30px;
+}
+.padding25,
+.padding25px {
+    padding: 25px;
+}
+.paddingTop25,
+.paddingTop25px {
+    padding-top: 25px;
+}
+.paddingBottom25,
+.paddingBottom25px {
+    padding-bottom: 25px;
+}
+.paddingLeft25,
+.paddingLeft25px {
+    padding-left: 25px;
+}
+.paddingRight25,
+.paddingRight25px {
+    padding-right: 25px;
+}
+.padding20,
+.padding20px {
+    padding: 20px;
+}
+.paddingTop20,
+.paddingTop20px {
+    padding-top: 20px;
+}
+.paddingBottom20,
+.paddingBottom20px {
+    padding-bottom: 20px;
+}
+.paddingLeft20,
+.paddingLeft20px {
+    padding-left: 20px;
+}
+.paddingRight20,
+.paddingRight20px {
+    padding-right: 20px;
+}
+.padding6px18px {
+    padding: 6px 18px
+}
+.padding8px15px {
+    padding: 8px 15px;
+}
+.padding10px15px {
+    padding: 10px 15px;
+}
+.padding10px18px {
+    padding: 10px 18px
+}
+.padding15px0px {
+    padding: 15px 0px;
+}
+.customPadding {
+    padding: 5px 10px
+}
+.btnTopBottomPadding,
+.btnTopBottomPadding10,
+.btnTopBottomPadding10px {
+    padding: 10px 0
+}
+.padding10and15px{
+    padding: 10px 15px
+}
+/*padding class end*/
+/*margin class*/
+.ml,
+.ml0,
+.ml0px {
+    margin-left: 0px;
+}
+.mt,
+.mt0,
+.mt0px {
+    margin-top: 0px;
+}
+.mr,
+.mr0,
+.mr0px {
+    margin-right: 0px;
+}
+.mb,
+.mb0,
+.mb0px {
+    margin-bottom: 0px;
+}
+.marginTB5,
+.marginTB5px {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.margin5,
+.margin5px {
+    margin: 5px;
+}
+.marginTop5,
+.marginTop5px {
+    margin-top: 5px;
+}
+.marginBottom5,
+.marginBottom5px {
+    margin-bottom: 5px;
+}
+.marginLeft5,
+.marginLeft5px {
+    margin-left: 5px;
+}
+.marginRight5,
+.marginRight5px {
+    margin-right: 5px;
+}
+.marginTB10,
+.marginTB10px {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.margin10,
+.margin10px {
+    margin: 10px;
+}
+.marginTop10,
+.marginTop10px {
+    margin-top: 10px;
+}
+.marginBottom10,
+.marginBottom10px {
+    margin-bottom: 10px;
+}
+.marginLeft10,
+.marginLeft10px {
+    margin-left: 10px;
+}
+.marginRight10,
+.marginRight10px {
+    margin-right: 10px;
+}
+.marginTB15,
+.marginTB15px {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.margin15,
+.margin15px {
+    margin: 15px;
+}
+.marginTop15,
+.marginTop15px {
+    margin-top: 15px;
+}
+.marginBottom15,
+.marginBottom15px {
+    margin-bottom: 15px;
+}
+.marginLeft15,
+.marginLeft15px {
+    margin-left: 15px;
+}
+.marginRight15,
+.marginRight15px {
+    margin-right: 15px;
+}
+.marginTop20,
+.marginTop20px {
+    margin-top: 20px;
+}
+.marginBottom20,
+.marginBottom20px {
+    margin-bottom: 20px;
+}
+.marginLeft20,
+.marginLeft20px {
+    margin-left: 20px;
+}
+.marginRight20,
+.marginRight20px {
+    margin-right: 20px;
+}
+.marginTop25,
+.marginTop25px {
+    margin-top: 25px;
+}
+.marginBottom25,
+.marginBottom25px {
+    margin-bottom: 25px;
+}
+.marginLeft25,
+.marginLeft25px {
+    margin-left: 25px;
+}
+.marginRight25,
+.marginRight25px {
+    margin-right: 25px;
+}
+.marginTop30,
+.marginTop30px {
+    margin-top: 30px;
+}
+.marginBottom30,
+.marginBottom30px {
+    margin-bottom: 30px;
+}
+.marginLeft30,
+.marginLeft30px {
+    margin-left: 30px;
+}
+.marginRight30,
+.marginRight30px {
+    margin-right: 30px;
+}
+.margin10px15px {
+    margin: 10px 15px;
+}
+.marginTop0px {
+    margin-top: 0px;
+}
+.marginBottom0px {
+    margin-bottom: 0px;
+}
+.marginLeft0pxRight0px,
+.ml0pxmr0px {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+/*margin class*/
+
+/*border css*/
+.borderNone,
+.noBorder,
+.transparent {
+    border: 0px !important
+}
+.borderDashed {
+    border: 1px dashed #e7e7e7;
+}
+.borderDoted {
+    border: 1px dotted #e7e7e7;
+}
+.greyBorder,
+.borderGrey1px,
+.border1px,
+.grey-background,
+.borderc7 {
+    border: #e7e7e7 solid 1px;
+}
+.borderBottom1px,
+.borderBottom1pxsolid,
+.borderBottomc7 {
+    border-bottom: 1px solid #e7e7e7 !important;
+}
+.borderTop1px,
+.borderTopc7 {
+    border-top: 1px solid #e7e7e7 !important;
+}
+.borderLeft,
+.borderLeft1px,
+.borderLeftc7 {
+    border-left: 1px solid #e7e7e7
+}
+.borderRight,
+.borderRight1px,
+.borderRightc7 {
+    border-right: 1px solid #e7e7e7
+}
+.lightBorder,
+.bordere7 {
+    border-bottom: 1px solid #e7e7e7;
+}
+.borderBottomLightGrey1px,
+.borderBottomLightGrey1pxsolid,
+.borderBottome7 {
+    border-bottom: 1px solid #e7e7e7 !important;
+}
+.borderTopLightGrey1px,
+.borderTope7 {
+    border-top: 1px solid #e7e7e7 !important;
+}
+.borderLeftLightGrey,
+.borderLeftLightGrey1px,
+.borderLefte7 {
+    border-left: 1px solid #e7e7e7;
+}
+.borderRightLightGrey,
+.borderRightLightGrey1px,
+.borderRighte7 {
+    border-left: 1px solid #e7e7e7;
+}
+.borderTop0px {
+    border-top: 0px;
+}
+.borderBottom0px {
+    border-bottom: 0px;
+}
+.borderLeft0px {
+    border-left: 0px;
+}
+.borderRight0px {
+    border-right: 0px;
+}
+.borderLeft0pxRight0px {
+    border-left: 0px;
+    border-right: 0px;
+}
+.greytextborder {
+    color: #111111 !important;
+    font-weight: 400;
+    word-wrap: break-word;
+    border: 1px solid #e7e7e7
+}
+/*border css*/
+/*border radius*/
+.rounded-0,
+.noRadiud,
+.radius0px,
+.radius0 {
+    border-radius: 0 !important
+}
+.borderRadius6,
+.borderRadius6px {
+    border-radius: 6px
+}
+.boxradius,
+.borderRadius4,
+.borderRadius4px {
+    border-radius: 4px
+}
+.borderRadiusCircle,
+.borderRadiusCircle50 {
+    border-radius: 50%
+}
+/*border radius*/
+/*cursor classes*/
+.cursorPointer {
+    cursor: pointer
+}
+.cursorDefault {
+    cursor: default;
+}
+.cursorDrag {
+    cursor: move;
+}
+/*cursor classes*/
+/*text align classes*/
+.alignright {
+  text-align: right
+}
+.alignleft {
+  text-align: left
+}
+.alignjustify {
+  text-align: justify
+}
+#dismiss,
+.jconfirm-box-container,
+.jconfirm-buttons,
+.aligncenter,
+.text-center,
+.textcenter {
+  text-align: center
+}
+/*text align classes*/
+.marginAuto{
+    margin: 0 auto;
+}
+/*vertical align classes*/
+.verticalAlignMiddle {
+  vertical-align: middle;
+}
+.verticalAlignTop{
+  vertical-align: top;
+}
+.verticalAlignBottom{
+  vertical-align: bottom;
+}
+/*vertical align classes*/
+/* display css*/
+.displayInlineBlock {
+    display: inline-block;
+}
+.displayTable {
+    display: table;
+}
+.displayTableCell {
+    display: table-cell;
+}
+.displayTablerow {
+    display: table-row;
+}
+.displayTablecolumn {
+    display: table-column;
+}
+.displayNone,
+.hideFooter {
+    display: none;
+}
+.displayBlock {
+    display: block;
+}
+.displayInBlock {
+    display: inline-block;
+}
+/* display css*/
+/*position css*/
+.overlay {
+  position: fixed;
+}
+.positionRelative{position: relative;}
+.positionabsolute{position: absolute;}
+.positionFixed{position: fixed;}
+/*position css*/
+
+/*color classes*/
+.red {
+    color: red
+}
+.green {
+    color: green
+}
+.yellow {
+    color: yellow
+}
+.colorLightGrey {
+    color: #c2c2c2;
+}
+.colorGrey,
+.disableColor,
+.colorC2,
+.doneBtn.colorLighterDark,
+.color52 {
+    color: #525252;
+}
+.color96 {
+    color: #969696;
+}
+.colorDarkGrey,
+.color76 {
+    color: #767676;
+}
+.colorDark {
+    color: #111111;
+}
+.whiteTextColor,
+.colorFf,
+.colorFF {
+    color: #ffffff;
+}
+.greytext {
+    color: #767676 !important;
+    font-weight: normal;
+    word-wrap: break-word;
+}
+.lightgreytext {
+    color: #525252 !important;
+    font-weight: normal;
+    word-wrap: break-word;
+}
+.greyHeaderText {
+    color: #767676 !important;
+    font-weight: normal;
+    word-wrap: break-word;
+}
+.greyHeaderText,
+.greytext,
+.lightgreytext {
+    font-weight: 400;
+    word-wrap: break-word
+}
+.lightBgColor {
+    background: #e7e7e7;
+    background-color: #e7e7e7;
+}
+.bgf8 {
+    background: #f8f8f8;
+    background-color: #f8f8f8;
+}
+.bgf9 {
+    background: #f9f9f9;
+    background-color: #f9f9f9;
+}
+.whiteBackground {
+    background: #fff;
+    background-color: #fff;
+}

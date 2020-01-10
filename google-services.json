@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "41499664494",
+    "firebase_url": "https://myclu-37bdc.firebaseio.com",
+    "project_id": "myclu-37bdc",
+    "storage_bucket": "myclu-37bdc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41499664494:android:7760b90a77bd8375ca067f",
+        "android_client_info": {
+          "package_name": "com.kryptosmobile.TrentU8"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "41499664494-sr814uou894p6atur7fuka611g5bngat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiGTYOwpZsKCkFm9C9VLAxt_PgelUEgHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "41499664494-sr814uou894p6atur7fuka611g5bngat.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "41499664494-slc7tpbaibk0ard57nnpmbrnkhv043qs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.unifyed.Alvinbl"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41499664494:android:79ef7174ca857396ca067f",
+        "android_client_info": {
+          "package_name": "com.unifyed.Alvinbl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "41499664494-sr814uou894p6atur7fuka611g5bngat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiGTYOwpZsKCkFm9C9VLAxt_PgelUEgHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "41499664494-sr814uou894p6atur7fuka611g5bngat.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "41499664494-slc7tpbaibk0ard57nnpmbrnkhv043qs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.unifyed.Alvinbl"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
